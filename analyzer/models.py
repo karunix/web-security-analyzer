@@ -16,3 +16,12 @@ class Finding:
     severity: Severity
     explanation: str
     recommendation: str
+
+    def to_dict(self):
+        return {
+            "scope": self.scope,
+            "observation": self.observation,
+            "severity": self.severity.value,
+            "explanation": self.explanation,
+            "recommendation": self.recommendation,
+        }
